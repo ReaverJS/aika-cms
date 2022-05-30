@@ -1,0 +1,37 @@
+<div class="card collection mb-3" id="{{ blockCode }}-{{ paramCode }}">
+    <div class="card-body">
+        <div class="d-flex justify-content-between mb-2">
+            <h5 class="card-title lead">{{ title }}</h5>
+            <div>
+                <button type="button" class="btn btn-primary" {% if disabled %} disabled {% endif %}>
+                    <i class="bi bi-plus-circle"></i>
+                    Add
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            {% if value %}
+                {% for item in value %}
+                    <div class="col-4 mb-3">
+                        <div class="card bg-light">
+                            <div class="d-flex justify-content-end">
+                                <button type="button" class="btn-close me-1 mt-1" {% if disabled %} disabled {% endif %}></button>
+                            </div>
+                            <div class="card-body">
+                                {% for paramName,paramValue in item %}
+                                    {{ includeBlock('/admin/block-prop-' ~ subParams[paramName].type, {
+                                        'title': subParams[paramName].title,
+                                        'paramCode': paramName,
+                                        'blockCode': code,
+                                        'value': paramValue,
+                                        'disabled': disabled,
+                                    }) }}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>

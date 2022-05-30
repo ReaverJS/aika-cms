@@ -1,0 +1,24 @@
+{% if ajax %}
+    {{ includeBlock('/admin/header-ajax') }}
+{% else %}
+    {{ includeBlock('/admin/header') }}
+{% endif %}
+
+{% if ajax == false %}
+    {{ includeBlock('/admin/blocks-sidebar') }}
+{% endif %}
+
+<div style="{% if ajax == false %}margin-left: 300px;{% endif %}">
+    <div class="container">
+        <main class="px-2 py-4">
+
+            {{ includeBlock('/admin/block-edit') }}
+        </main>
+    </div>
+</div>
+
+{% if ajax %}
+    {{ includeBlock('/admin/footer-ajax') }}
+{% else %}
+    {{ includeBlock('/admin/footer') }}
+{% endif %}

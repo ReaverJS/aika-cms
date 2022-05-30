@@ -1,0 +1,269 @@
+{
+	"name": "Homsters Events",
+	"url": "reaver.dev",
+	"version": "0.1",
+	"googleAnalytics": false,
+	"pages": [
+		{
+			"url": "/",
+			"title": "Главная",
+			"meta": {
+				"description": "Самый лучший сайт в мире"
+			},
+			"blocks": [
+				{
+					"code": "header",
+					"title": "Тестовый компонент",
+					"params": {
+						"logo": "/admin/data/blocks/public/header/logo.png",
+						"menu": [
+							{
+								"text": "Эвенты",
+								"scrollTo": ".events",
+								"isSpecial": false
+							},
+							{
+								"text": "Организаторы",
+								"scrollTo": ".partners",
+								"isSpecial": false
+							},
+							{
+								"text": "Тест",
+								"scrollTo": "kk",
+								"isSpecial": true
+							}
+						]
+					}
+				},
+				{
+					"code": "hero",
+					"title": "Тестовый компонент",
+					"params": {
+						"background": "/admin/data/blocks/public/hero/hero.jpg",
+						"overtitle": "ПРИ ПОДДЕРЖКЕ АССОЦИАЦИИ ЗАСТРОЙЩИКОВ КАЗАХСТАНА И КАЗАХСТАНСКОЙ ЖИЛИЩНОЙ КОМПАНИИ",
+						"title": "HOMSTERS EVENTS",
+						"subtitle": "СТРОИМ ПО НОВЫМ ПРАВИЛАМ",
+						"desc": "Семинар для застройщиков в городах Алматы, Нур-Султан, Шымкент, Актау, Атырау, Караганда, Актобе"
+					}
+				},
+				{
+					"code": "events",
+					"title": "Тестовый компонент",
+					"params": {
+						"title": "Мероприятия",
+						"events": [
+							{
+								"link": "/events/almaty",
+								"title": "Строим по новым правилам",
+								"city": "Алматы",
+								"address": "Байзакова, 280",
+								"date": "12",
+								"month": "июня"
+							},
+							{
+								"link": "/events/astana",
+								"title": "Строим по новым правилам",
+								"city": "Астана",
+								"address": "Ленина, 14",
+								"date": "24",
+								"month": "июня"
+							},
+							{
+								"link": "/events/karaganda",
+								"title": "Строим по новым правилам",
+								"city": "Караганда",
+								"address": "Ауэзова, 330",
+								"date": "3",
+								"month": "июля"
+							}
+						]
+					}
+				},
+				{
+					"code": "partners",
+					"title": "Тестовый компонент",
+					"params": {
+						"title": "Организаторы",
+						"partners": [
+							{
+								"img": "/admin/data/blocks/public/partners/partner-a.jpg",
+								"class": ""
+							},
+							{
+								"img": "/admin/data/blocks/public/partners/logo.png",
+								"class": "homsters-fix"
+							},
+							{
+								"img": "/admin/data/blocks/public/partners/partner-k.png",
+								"class": "kjk-fix"
+							}
+						]
+					}
+				},
+				{
+					"code": "feedback",
+					"title": "Тестовый компонент",
+					"params": {
+						"title": "Свяжитесь с нами",
+						"links": [
+							{
+								"text": "mussirova@homsters.kz",
+								"link": "mailto:mussirova@homsters.kz",
+								"img": "/admin/data/blocks/public/feedback/email.png"
+							},
+							{
+								"text": "+7 706 411 8660",
+								"link": "tel:+77064118660",
+								"img": "/admin/data/blocks/public/feedback/phone.png"
+							},
+							{
+								"text": "@homsters_kz",
+								"link": "//facebook.com",
+								"img": "/admin/data/blocks/public/feedback/facebook.png"
+							},
+							{
+								"text": "@homsters_kz",
+								"link": "//instagram.com",
+								"img": "/admin/data/blocks/public/feedback/instagram.png"
+							}
+						]
+					}
+				},
+				{
+					"code": "footer",
+					"title": "Тестовый компонент",
+					"params": {
+						"text": "@reaverjs"
+					}
+				}
+			]
+		},
+		{
+			"url": "/events/almaty",
+			"title": "Эвент Алматы",
+			"meta": {
+				"description": "Самая лучшая тестовая страница"
+			},
+			"blocks": [
+				{
+					"code": "header",
+					"title": "Тестовый компонент",
+					"params": {
+						"logo": "/admin/data/blocks/public/header/logo.png",
+						"menu": [
+							{
+								"text": "Эвенты",
+								"scrollTo": ".events",
+								"isSpecial": false
+							},
+							{
+								"text": "Организаторы",
+								"scrollTo": ".partners",
+								"isSpecial": false
+							},
+							{
+								"text": "Тест",
+								"scrollTo": "kk",
+								"isSpecial": true
+							}
+						]
+					}
+				},
+				{
+					"code": "event-hero",
+					"title": "Тестовый компонент",
+					"params": {
+						"background": "/admin/data/blocks/public/hero/hero.jpg",
+						"overtitle": "ПРИ ПОДДЕРЖКЕ АССОЦИАЦИИ ЗАСТРОЙЩИКОВ КАЗАХСТАНА И КАЗАХСТАНСКОЙ ЖИЛИЩНОЙ КОМПАНИИ",
+						"title": "HOMSTERS EVENTS",
+						"subtitle": "СТРОИМ ПО НОВЫМ ПРАВИЛАМ",
+						"city": "Алматы",
+						"address": "Байзакова, 280",
+						"date": "13",
+						"month": "июня",
+						"btnText": "Зарегистрироваться",
+						"scrollTo": ".registration"
+					}
+				},
+				{
+					"code": "speakers-cards",
+					"title": "Тестовый компонент",
+					"params": {
+						"h1": "Kekw"
+					}
+				},
+				{
+					"code": "program-cards",
+					"title": "Тестовый компонент",
+					"params": {
+						"h1": "Kekw"
+					}
+				},
+				{
+					"code": "registration",
+					"title": "Тестовый компонент",
+					"params": {
+						"h1": "Kekw"
+					}
+				},
+				{
+					"code": "partners",
+					"title": "Тестовый компонент",
+					"params": {
+						"title": "Организаторы",
+						"partners": [
+							{
+								"img": "/admin/data/blocks/public/partners/partner-a.jpg",
+								"class": ""
+							},
+							{
+								"img": "/admin/data/blocks/public/partners/logo.png",
+								"class": "homsters-fix"
+							},
+							{
+								"img": "/admin/data/blocks/public/partners/partner-k.png",
+								"class": "kjk-fix"
+							}
+						]
+					}
+				},
+				{
+					"code": "feedback",
+					"title": "Тестовый компонент",
+					"params": {
+						"title": "Свяжитесь с нами",
+						"links": [
+							{
+								"text": "mussirova@homsters.kz",
+								"link": "mailto:mussirova@homsters.kz",
+								"img": "/admin/data/blocks/public/feedback/email.png"
+							},
+							{
+								"text": "+7 706 411 8660",
+								"link": "tel:+77064118660",
+								"img": "/admin/data/blocks/public/feedback/phone.png"
+							},
+							{
+								"text": "@homsters_kz",
+								"link": "//facebook.com",
+								"img": "/admin/data/blocks/public/feedback/facebook.png"
+							},
+							{
+								"text": "@homsters_kz",
+								"link": "//instagram.com",
+								"img": "/admin/data/blocks/public/feedback/instagram.png"
+							}
+						]
+					}
+				},
+				{
+					"code": "footer",
+					"title": "Тестовый компонент",
+					"params": {
+						"text": "@reaverjs"
+					}
+				}
+			]
+		}
+	]
+}

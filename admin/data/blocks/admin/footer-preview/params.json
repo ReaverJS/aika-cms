@@ -1,0 +1,29 @@
+{
+	"title": "Footer",
+	"params": {
+		"h1": {
+			"title": "Title H1",
+			"type": "string",
+			"required": true,
+			"default": "Title H1"
+		},
+		"h2": {
+			"title": "Title H2",
+			"type": "string",
+			"required": true,
+			"default": "Title H2"
+		},
+		"h3": {
+			"title": "Title H3",
+			"type": "string",
+			"required": true,
+			"default": "Title H3"
+		},
+		"h4": {
+			"title": "Title H4",
+			"type": "string",
+			"required": true,
+			"default": "Title H4"
+		}
+	}
+}

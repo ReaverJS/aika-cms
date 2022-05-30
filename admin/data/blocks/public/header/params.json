@@ -1,0 +1,50 @@
+{
+	"title": "Header",
+	"params": {
+		"logo": {
+			"title": "Logo",
+			"type": "string",
+			"required": true,
+			"default": "/admin/data/blocks/public/header/logo.png"
+		},
+		"menu": {
+			"title": "Menu",
+			"type": "collection",
+			"subParams": {
+				"text": {
+					"title": "Text",
+					"type": "string",
+					"required": true
+				},
+				"scrollTo": {
+					"title": "Scroll to",
+					"type": "string",
+					"required": true
+				},
+				"isSpecial": {
+					"title": "Is Special",
+					"type": "boolean",
+					"required": true
+				}
+			},
+			"required": false,
+			"default": [
+				{
+					"text": "Эвенты",
+					"scrollTo": ".events",
+					"isSpecial": false
+				},
+				{
+					"text": "Организаторы",
+					"scrollTo": ".partners",
+					"isSpecial": false
+				},
+				{
+					"text": "Тест",
+					"scrollTo": "kk",
+					"isSpecial": true
+				}
+			]
+		}
+	}
+}

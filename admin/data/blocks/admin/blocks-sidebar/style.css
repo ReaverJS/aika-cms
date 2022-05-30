@@ -1,0 +1,29 @@
+.pages-sidebar {
+    width: 300px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    height: 100vh;
+
+    display: flex;
+    flex-flow: column;
+
+    padding: 60px 8px 40px 16px;
+}
+
+.pages-sidebar .v-stack {
+    padding-right: 8px;
+}
+
+.pages-sidebar .v-stack::-webkit-scrollbar {
+    width: 8px;
+    height: 4px;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.pages-sidebar .v-stack::-webkit-scrollbar-thumb  {
+    background-color: white;
+    border-radius: 3px;
+}

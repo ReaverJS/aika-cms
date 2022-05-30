@@ -1,0 +1,13 @@
+<section class="partners">
+    <div class="container">
+        <h2>Организаторы</h2>
+
+        <div class="partners-wrapper">
+            {% for partner in partners %}
+                <div class="partner {% if partner.class %} {{ partner.class }} {% endif %}">
+                    <img src="{{ partner.img }}" alt="">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

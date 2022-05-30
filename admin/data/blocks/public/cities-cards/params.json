@@ -1,0 +1,58 @@
+{
+	"title": "Cities List",
+	"params": {
+		"title": {
+			"title": "Title",
+			"type": "string",
+			"required": true,
+			"default": "Города"
+		},
+		"cities": {
+			"title": "Cities",
+			"type": "collection",
+			"subParams": {
+				"city": {
+					"title": "City",
+					"type": "string",
+					"required": true
+				},
+				"address": {
+					"title": "Address",
+					"type": "string",
+					"required": true
+				},
+				"date": {
+					"title": "Date",
+					"type": "string",
+					"required": true
+				},
+				"month": {
+					"title": "Month",
+					"type": "string",
+					"required": true
+				}
+			},
+			"required": false,
+			"default": [
+				{
+					"city": "Алматы",
+					"address": "Байзакова, 280",
+					"date": "12",
+					"month": "июня"
+				},
+				{
+					"city": "Астана",
+					"address": "Ленина, 14",
+					"date": "24",
+					"month": "июня"
+				},
+				{
+					"city": "Караганда",
+					"address": "Ауэзова, 330",
+					"date": "3",
+					"month": "июля"
+				}
+			]
+		}
+	}
+}

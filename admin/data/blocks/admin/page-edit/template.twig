@@ -1,0 +1,12 @@
+{% if url %}
+    <h2 class="display-3 text-warning mb-3">{{ title }}</h2>
+    <div class="card bg-dark mb-3" style="width: fit-content;">
+        <h3 class="display-6 text-warning text-end mx-2">{{ url }}</h3>
+    </div>
+    <h5 class="display-6">Blocks</h5>
+    {{ includeBlock('/admin/page-builder') }}
+    <h5 class="display-6">Preview</h5>
+    <div class="card overflow-hidden">
+        <iframe src="/admin/page-preview/?url={{ url }}" frameborder="0" height="740px"></iframe>
+    </div>
+{% endif %}

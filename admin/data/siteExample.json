@@ -1,0 +1,23 @@
+{
+	"name": "Homsters Events",
+	"url": "reaver.dev",
+	"version": "0.1",
+	"googleAnalytics": false,
+	"pages": [
+		{
+			"path": "/",
+			"title": "Главная",
+			"meta": {
+				"description": "Тест описания"
+			},
+			"blocks": [
+				{
+					"code": "test",
+					"params": {
+						"title": "Kekw"
+					}
+				}
+			]
+		}
+	]
+}

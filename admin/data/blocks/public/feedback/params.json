@@ -1,0 +1,55 @@
+{
+	"title": "Feedback",
+	"params": {
+		"title": {
+			"title": "Title",
+			"type": "string",
+			"required": true,
+			"default": "Свяжитесь с нами"
+		},
+		"links": {
+			"title": "Links",
+			"type": "collection",
+			"subParams": {
+				"text": {
+					"title": "Text",
+					"type": "string",
+					"required": true
+				},
+				"link": {
+					"title": "Link",
+					"type": "string",
+					"required": true
+				},
+				"img": {
+					"title": "Image",
+					"type": "string",
+					"required": true
+				}
+			},
+			"required": false,
+			"default": [
+				{
+					"text": "mussirova@homsters.kz",
+					"link": "mailto:mussirova@homsters.kz",
+					"img": "/admin/data/blocks/public/feedback/email.png"
+				},
+				{
+					"text": "+7 706 411 8660",
+					"link": "tel:+77064118660",
+					"img": "/admin/data/blocks/public/feedback/phone.png"
+				},
+				{
+					"text": "@homsters_kz",
+					"link": "//facebook.com",
+					"img": "/admin/data/blocks/public/feedback/facebook.png"
+				},
+				{
+					"text": "@homsters_kz",
+					"link": "//instagram.com",
+					"img": "/admin/data/blocks/public/feedback/instagram.png"
+				}
+			]
+		}
+	}
+}

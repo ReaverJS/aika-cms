@@ -1,0 +1,52 @@
+.registration {
+    padding: 60px 20px;
+    background-color: var(--primary-color);
+}
+
+.registration form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-flow: column;
+}
+
+.registration form .form-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-flow: column;
+}
+
+.registration form label {
+    padding-left: 12px;
+    margin-bottom: 4px;
+    font-size: 20px;
+    font-weight: 600;
+    max-width: 200px;
+}
+
+.registration form input:focus,
+.registration form select:focus {
+    outline: none !important;
+}
+
+.registration form input,
+.registration form select {
+    border: 0;
+    outline: 0;
+
+    font-size: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color:  var(--pseudo-white);
+
+    box-shadow: 4px 4px 6px 0 rgba(0,0,0, .5);
+}
+
+.registration form input[type="submit"] {
+    margin-top: 30px;
+    background-color: var(--pseudo-black);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}

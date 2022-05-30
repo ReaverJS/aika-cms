@@ -1,0 +1,65 @@
+{
+	"title": "Hero with Event Card",
+	"params": {
+		"background": {
+			"title": "Background Image",
+			"type": "string",
+			"required": false,
+			"default": "/admin/data/blocks/public/hero/hero.jpg"
+		},
+		"overtitle": {
+			"title": "Over-Title",
+			"type": "string",
+			"required": false,
+			"default": "ПРИ ПОДДЕРЖКЕ АССОЦИАЦИИ ЗАСТРОЙЩИКОВ КАЗАХСТАНА И КАЗАХСТАНСКОЙ ЖИЛИЩНОЙ КОМПАНИИ"
+		},
+		"title": {
+			"title": "Title",
+			"type": "string",
+			"required": true,
+			"default": "HOMSTERS EVENTS"
+		},
+		"subtitle": {
+			"title": "Subtitle",
+			"type": "string",
+			"required": false,
+			"default": "СТРОИМ ПО НОВЫМ ПРАВИЛАМ"
+		},
+		"city": {
+			"title": "City",
+			"type": "string",
+			"required": true,
+			"default": "Алматы"
+		},
+		"address": {
+			"title": "Address",
+			"type": "string",
+			"required": true,
+			"default": "Байзакова, 280"
+		},
+		"date": {
+			"title": "Date",
+			"type": "string",
+			"required": true,
+			"default": "13"
+		},
+		"month": {
+			"title": "Month",
+			"type": "string",
+			"required": true,
+			"default": "июня"
+		},
+		"btnText": {
+			"title": "Button Text",
+			"type": "string",
+			"required": true,
+			"default": "Зарегистрироваться"
+		},
+		"scrollTo": {
+			"title": "On click scroll to",
+			"type": "string",
+			"required": true,
+			"default": ".registration"
+		}
+	}
+}

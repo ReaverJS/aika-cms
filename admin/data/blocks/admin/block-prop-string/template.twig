@@ -1,0 +1,7 @@
+<div class="form-floating mb-3">
+    <input type="text" class="form-control" id="{{ blockCode }}-{{ paramCode }}"
+           placeholder="{{ title }}"
+            {% if disabled %} disabled {% endif %}
+           {% if value %} value="{{ value }}" {% endif %}>
+    <label for="{{ blockCode }}-{{ paramCode }}">{{ title }}</label>
+</div>

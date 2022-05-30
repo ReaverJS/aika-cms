@@ -1,0 +1,12 @@
+<div class="pages-sidebar text-bg-dark">
+    <h2 class="display-4 mb-4 text-center text-warning">Blocks <i class="bi bi-grid"></i></h2>
+
+    <div class="v-stack overflow-auto">
+        {% for block in blocks %}
+            <div class="card mb-2 p-2 {% if currentCode == block.code %} text-bg-warning {% else %} text-bg-light {% endif %}"
+                 style="cursor: pointer" onclick="window.location.href='?code={{ block.code }}'">
+                <h5 class="card-title mb-0 lead"><i class="bi bi-slash-square me-2"></i> {{ block.title }}</h5>
+            </div>
+        {% endfor %}
+    </div>
+</div>

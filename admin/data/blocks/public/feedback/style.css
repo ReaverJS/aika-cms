@@ -1,0 +1,34 @@
+.feedback {
+    padding: 60px 20px;
+}
+
+.feedback .contacts-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedback .contacts-wrapper a {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    margin: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedback .contacts-wrapper a img {
+    width: 32px;
+    height: 32px;
+    margin-right: 6px;
+}
+
+@media (max-width: 767.98px) {
+    .feedback .contacts-wrapper {
+        flex-flow: column;
+        align-items: flex-start;
+        max-width: 300px;
+        margin: auto;
+    }
+}

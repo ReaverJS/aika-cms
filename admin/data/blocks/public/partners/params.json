@@ -1,0 +1,42 @@
+{
+	"title": "Partners List",
+	"params": {
+		"title": {
+			"title": "Title",
+			"type": "string",
+			"required": true,
+			"default": "Организаторы"
+		},
+		"partners": {
+			"title": "Partners",
+			"type": "collection",
+			"required": true,
+			"subParams": {
+				"img": {
+					"title": "Image",
+					"type": "string",
+					"required": true
+				},
+				"class": {
+					"title": "Class",
+					"type": "string",
+					"required": false
+				}
+			},
+			"default": [
+				{
+					"img": "/admin/data/blocks/public/partners/partner-a.jpg",
+					"class": ""
+				},
+				{
+					"img": "/admin/data/blocks/public/partners/logo.png",
+					"class": "homsters-fix"
+				},
+				{
+					"img": "/admin/data/blocks/public/partners/partner-k.png",
+					"class": "kjk-fix"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,102 @@
+.program .program-wrapper {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.program .program-card {
+    padding: 20px;
+    box-shadow: 4px 4px 6px 0 rgba(0,0,0, .5);
+    background: white;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+
+    transition: box-shadow .3s;
+}
+
+.program .program-card:hover {
+    box-shadow: 6px 6px 8px 0 rgba(0,0,0, .6);
+}
+
+.program .program-point {
+    width: 60px;
+    height: 60px;
+    background: var(--pseudo-white);
+    border-radius: 50%;
+    z-index: 20;
+    margin-right: 20px;
+    border: 6px solid var(--primary-color);
+    box-shadow: inset 3px 3px 4px 0 rgba(0,0,0, .5);
+
+    transition: box-shadow .3s;
+}
+
+.program .program-card:hover .program-point {
+    box-shadow: inset 5px 5px 6px 0 rgba(0,0,0, .6);
+}
+
+.program .program-card:after {
+    content: '';
+    position: absolute;
+    left: calc(50px - 4px);
+    z-index: 10;
+    border: 4px dashed var(--pseudo-black);
+}
+
+.program .program-card:first-child:after {
+    bottom: 0;
+    transform: translateY(7px);
+    height: 50%;
+}
+
+.program .program-card:last-child:after {
+    top: 0;
+    transform: translateY(calc(-50% + 34px));
+    height: 50%;
+    width: 0;
+}
+
+.program .program-card:not(:first-child):not(:last-child):after {
+    bottom: 0;
+    transform: translateY(20px);
+    height: calc(100% + 40px);
+}
+
+.program .text-wrapper {
+    width: calc(100% - 80px);
+}
+
+.program .text-wrapper h5 {
+    font-size: 42px;
+    color: var(--primary-color);
+    line-height: 1;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.program .text-wrapper p {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    margin-left: 3px;
+}
+
+.program .text-wrapper .program-speaker {
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 0;
+    opacity: .85;
+    text-align: right;
+}
+
+@media (max-width: 767.98px) {
+    .program .text-wrapper h5 {
+        font-size: 32px;
+    }
+}

@@ -1,0 +1,18 @@
+{% if code %}
+    <h2 class="display-3 text-warning">{{ title }}</h2>
+    <h5 class="display-6">Properties</h5>
+    {% for paramName,param in params %}
+        {{ includeBlock('/admin/block-prop-' ~ param.type, {
+            'title': param.title,
+            'paramCode': paramName,
+            'blockCode': code,
+            'value': param.default,
+            'disabled': true,
+            'subParams': param.subParams,
+        }) }}
+    {% endfor %}
+    <h5 class="display-6">Preview</h5>
+    <div class="card overflow-hidden">
+        <iframe src="/admin/block-preview/?code={{ code }}" frameborder="0" height="600px"></iframe>
+    </div>
+{% endif %}

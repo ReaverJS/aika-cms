@@ -1,0 +1,31 @@
+<div class="pages-sidebar text-bg-dark">
+    <h2 class="display-4 mb-4 text-center text-warning">Pages <i class="bi bi-files"></i></h2>
+
+    <div class="v-stack overflow-auto">
+
+        <div class="card text-bg-light mb-2 p-2">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0 lead">Add new page</h5>
+                <i class="bi bi-plus-circle" style="font-size: 24px;"></i>
+            </div>
+
+        </div>
+        <hr>
+        {% for section in sections %}
+            {% for page in section.pages %}
+                <div class="card mb-2 p-2 {% if currentUrl == page.url %} text-bg-warning {% else %} text-bg-light {% endif %}"
+                     style="cursor: pointer" onclick="window.location.href='?url={{ page.url }}'">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title lead">{{ page.title }}</h5>
+                        <button type="button" class="btn-close"></button>
+                    </div>
+                    <code class="bg-dark px-2 py-1 rounded d-inline-block user-select-all text-warning">{{ page.url }}</code>
+                </div>
+            {% endfor %}
+            {% if loop.last == false %}
+                <hr>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+</div>

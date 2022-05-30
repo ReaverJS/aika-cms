@@ -1,0 +1,19 @@
+<section class="cities">
+    <div class="container">
+        <h2>{{ title }}</h2>
+        <div class="cities-wrapper">
+            {% for city in cities %}
+                <div class="city">
+                    <div class="text-wrapper">
+                        <h5>{{ city.city }}</h5>
+                        <p>{{ city.address }}</p>
+                    </div>
+                    <div class="date-wrapper">
+                        <h5>{{ city.date }}</h5>
+                        <p>{{ city.month }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

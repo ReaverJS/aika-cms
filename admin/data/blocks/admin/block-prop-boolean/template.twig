@@ -1,0 +1,7 @@
+<div class="form-check mb-3">
+    <input class="form-check-input" type="checkbox" id="{{ blockCode }}-{{ paramCode }}"
+           value="{{ paramCode }}" {% if value %} checked {% endif %} {% if disabled %} disabled {% endif %}>
+    <label class="form-check-label" for="{{ blockCode }}-{{ paramCode }}">
+        {{ title }}
+    </label>
+</div>

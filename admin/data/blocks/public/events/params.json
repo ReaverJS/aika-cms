@@ -1,0 +1,74 @@
+{
+	"title": "Events List",
+	"params": {
+		"title": {
+			"title": "Title",
+			"type": "string",
+			"required": true,
+			"default": "Мероприятия"
+		},
+		"events": {
+			"title": "Events",
+			"type": "collection",
+			"subParams": {
+				"link": {
+					"title": "Link",
+					"type": "string",
+					"required": true
+				},
+				"title": {
+					"title": "Title",
+					"type": "string",
+					"required": true
+				},
+				"city": {
+					"title": "City",
+					"type": "string",
+					"required": true
+				},
+				"address": {
+					"title": "Address",
+					"type": "string",
+					"required": true
+				},
+				"date": {
+					"title": "Date",
+					"type": "string",
+					"required": true
+				},
+				"month": {
+					"title": "Month",
+					"type": "string",
+					"required": true
+				}
+			},
+			"required": false,
+			"default": [
+				{
+					"link": "/events/almaty",
+					"title": "Строим по новым правилам",
+					"city": "Алматы",
+					"address": "Байзакова, 280",
+					"date": "12",
+					"month": "июня"
+				},
+				{
+					"link": "/events/astana",
+					"title": "Строим по новым правилам",
+					"city": "Астана",
+					"address": "Ленина, 14",
+					"date": "24",
+					"month": "июня"
+				},
+				{
+					"link": "/events/karaganda",
+					"title": "Строим по новым правилам",
+					"city": "Караганда",
+					"address": "Ауэзова, 330",
+					"date": "3",
+					"month": "июля"
+				}
+			]
+		}
+	}
+}

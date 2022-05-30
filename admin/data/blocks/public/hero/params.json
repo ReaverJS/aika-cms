@@ -1,0 +1,35 @@
+{
+	"title": "Hero Image",
+	"params": {
+		"background": {
+			"title": "Background Image",
+			"type": "string",
+			"required": false,
+			"default": "/admin/data/blocks/public/hero/hero.jpg"
+		},
+		"overtitle": {
+			"title": "Over-Title",
+			"type": "string",
+			"required": false,
+			"default": "ПРИ ПОДДЕРЖКЕ АССОЦИАЦИИ ЗАСТРОЙЩИКОВ КАЗАХСТАНА И КАЗАХСТАНСКОЙ ЖИЛИЩНОЙ КОМПАНИИ"
+		},
+		"title": {
+			"title": "Title",
+			"type": "string",
+			"required": true,
+			"default": "HOMSTERS EVENTS"
+		},
+		"subtitle": {
+			"title": "Subtitle",
+			"type": "string",
+			"required": false,
+			"default": "СТРОИМ ПО НОВЫМ ПРАВИЛАМ"
+		},
+		"desc": {
+			"title": "Description",
+			"type": "string",
+			"required": false,
+			"default": "Семинар для застройщиков в городах Алматы, Нур-Султан, Шымкент, Актау, Атырау, Караганда, Актобе"
+		}
+	}
+}

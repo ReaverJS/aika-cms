@@ -1,0 +1,15 @@
+<section class="feedback">
+    <div class="container">
+        <h2>{{ title }}</h2>
+
+        <div class="contacts-wrapper">
+            {% for link in links %}
+                <a href="{{ link.link }}">
+                    <img src="{{ link.img }}" alt="{{ link.text }}">
+                    <span>{{ link.text }}</span>
+                </a>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>

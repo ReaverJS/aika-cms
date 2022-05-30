@@ -1,0 +1,84 @@
+<div class="mb-3 page-builder d-flex flex-column">
+    {% for index,block in blocks %}
+        <div class="card p-2 mb-1" style="order: {{ index }};" data-order="{{ index }}">
+            <div class="row">
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="lead mb-0">{{ block.code }}</p>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary"
+                                data-action="up">
+                            <i class="bi bi-chevron-up"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary"
+                                data-action="down">
+                            <i class="bi bi-chevron-down"></i>
+                        </button>
+                        <button type="button" class="btn btn-warning" data-block="{{ block.code }}"
+                                data-bs-toggle="modal" data-bs-target="#block-params-edit">
+                            <i class="bi bi-gear"></i> Params
+                        </button>
+                        <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="modal fade" id="block-params-edit" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <iframe src="/admin/blocks/?code=header&ajax" style="width: 100%; height: 800px;"
+                        frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.page-builder .btn-group .btn-warning').forEach(el => {
+        el.addEventListener('click', event => {
+            const code = event.currentTarget.dataset.block
+            document.querySelector('#block-params-edit iframe').src = `/admin/blocks/?code=${code}&ajax`
+        })
+    })
+
+    document.querySelectorAll('[data-action="up"]').forEach(el => {
+        el.addEventListener('click', event => {
+            const btn = event.currentTarget
+            const card = btn.parentElement.parentElement.parentElement.parentElement
+            const order = parseInt(card.dataset.order)
+            const upper = document.querySelector(`[data-order="${order - 1}"]`)
+
+            upper.dataset.order = order
+            upper.style.order = order
+
+            card.dataset.order = order - 1
+            card.style.order = order - 1
+
+            console.log(card)
+        })
+    })
+
+    document.querySelectorAll('[data-action="down"]').forEach(el => {
+        el.addEventListener('click', event => {
+            const btn = event.currentTarget
+            const card = btn.parentElement.parentElement.parentElement.parentElement
+            const order = parseInt(card.dataset.order)
+            const lower = document.querySelector(`[data-order="${order + 1}"]`)
+
+            lower.dataset.order = order
+            lower.style.order = order
+
+            card.dataset.order = order + 1
+            card.style.order = order + 1
+
+            console.log(card)
+        })
+    })
+</script>

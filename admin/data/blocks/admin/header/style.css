@@ -1,0 +1,11 @@
+:root {
+    --primary-color: #239eed;
+    --secondary-color: #fb9c3d;
+    --pseudo-white: #E5E5E5;
+}
+
+header {
+    z-index: 100;
+    position: relative;
+    width: 100%;
+}

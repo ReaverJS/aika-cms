@@ -1,0 +1,3 @@
+{% for block in blocks %}
+    {{ includeBlock('/public/' ~ block.code, block.params) }}
+{% endfor %}

@@ -1,0 +1,91 @@
+.cities-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.cities-wrapper .city {
+    width: calc(100% / 3 - 80px / 3);
+    margin: 40px 40px 0 0;
+    background-color: white;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 4px 4px 6px 0 rgba(0,0,0, .5);
+    overflow: hidden;
+}
+
+.cities-wrapper .city:nth-of-type(3n) {
+    margin-right: 0;
+}
+
+.cities-wrapper .text-wrapper {
+    padding: 20px;
+    z-index: 2;
+}
+
+.cities-wrapper .text-wrapper h5 {
+    font-size: 26px;
+    margin-bottom: 16px;
+}
+
+.cities-wrapper .text-wrapper p {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+
+.cities-wrapper .date-wrapper {
+    padding: 20px;
+    z-index: 2;
+    color: var(--pseudo-white);
+    text-align: center;
+}
+
+.cities-wrapper .date-wrapper h5 {
+    font-size: 36px;
+    line-height: calc(36 / 26);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.cities-wrapper .date-wrapper p {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+
+.cities-wrapper .city::before {
+    content: '';
+    position: absolute;
+    right: -150px;
+    top: -150px;
+    width: 300px;
+    height: 300px;
+    background-color: var(--primary-color);
+    border-radius: 100%;
+    z-index: 1;
+
+    transition: transform .6s;
+}
+
+.cities-wrapper .city:hover::before {
+    transform: scale(3);
+    transition: transform .9s;
+}
+
+
+@media (max-width: 767.98px) {
+    .cities-wrapper .city {
+        width: 100%;
+        margin: 40px 0 0 0;
+        background-color: white;
+        border-radius: var(--border-radius);
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        box-shadow: 4px 4px 6px 0 rgba(0,0,0, .5);
+        overflow: hidden;
+    }
+}
