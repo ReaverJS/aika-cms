@@ -12,10 +12,12 @@ class Engine
     public Site $site;
     public array $blocks;
     public stdClass $urlParams;
+    public $body;
 
     function __construct()
     {
         $this->urlParams = $this->getUrlParams();
+        $this->body = $this->getBody();
 
         $this->twigLoader = new FilesystemLoader(ADMIN_PATH . '/data');
         $this->twig = new Environment($this->twigLoader, [
@@ -67,6 +69,16 @@ class Engine
             $urlParams->$key = $value;
         }
         return $urlParams;
+    }
+
+    function getBody()
+    {
+        $input = file_get_contents('php://input');
+        if (json_decode($input)) {
+            return json_decode($input);
+        } else {
+            return ($_POST && isset($_POST['data'])) ? json_decode($_POST['data']) : [];
+        }
     }
 
     function render($path, $params = [], $return = false)

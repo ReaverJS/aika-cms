@@ -1,12 +1,12 @@
-<section class="hero">
-    <div class="img-wrapper">
+<section class="hero gradient">
+    <div class="img-wrapper {% if gradient %}gradient{% endif %}">
         <img src="{{ background }}" alt="{{ title }}">
     </div>
     <div class="container">
         <div class="text-wrapper">
-            <h4>{{ overtitle }}</h4>
-            <h1>{{ title }}</h1>
-            <h2>{{ subtitle }}</h2>
+            <h4 style="color: {{ textColor }}">{{ overtitle }}</h4>
+            <h1 style="color: {{ textColor }}">{{ title }}</h1>
+            <h2 style="color: {{ textColor }}">{{ subtitle }}</h2>
             <div class="event-card">
                 <div class="text-wrapper">
                     <p>🏦 {{ city }}</p>

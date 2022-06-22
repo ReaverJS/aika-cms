@@ -3,10 +3,43 @@
     <div class="card bg-dark mb-3" style="width: fit-content;">
         <h3 class="display-6 text-warning text-end mx-2">{{ url }}</h3>
     </div>
-    <h5 class="display-6">Blocks</h5>
+    <div class="row">
+        <div class="col">
+            <h5 class="display-6">Blocks</h5>
+        </div>
+        <div class="col text-end">
+            <a class="btn btn-primary btn-block-add" href="#"
+               data-bs-toggle="modal" data-bs-target="#block-add">
+                Add <i class="ms-1 d-inline-block bi bi-plus-lg"></i>
+            </a>
+        </div>
+    </div>
     {{ includeBlock('/admin/page-builder') }}
     <h5 class="display-6">Preview</h5>
     <div class="card overflow-hidden">
-        <iframe src="/admin/page-preview/?url={{ url }}" frameborder="0" height="740px"></iframe>
+        <iframe src="/admin/page-preview/?url={{ url }}" frameborder="0" height="740px" name="page-preview"></iframe>
     </div>
+
+    <div class="modal fade" id="block-add" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="/admin/blocks/?code=header&ajax" style="width: 100%; height: 600px;"
+                            frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.btn-block-add').forEach(el => {
+            el.addEventListener('click', event => {
+                const page = new URL(window.location.href).searchParams.get("url")
+                document.querySelector('#block-add iframe').src = `/admin/block-add/?page=${page}&ajax`
+            })
+        })
+    </script>
 {% endif %}

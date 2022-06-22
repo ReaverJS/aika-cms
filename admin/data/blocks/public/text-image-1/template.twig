@@ -1,0 +1,23 @@
+<section class="text-image-1">
+    <div class="container">
+        <h2>{{ title }}</h2>
+
+        <div class="flex-wrapper">
+            <div class="text-wrapper">
+                {% for point in text %}
+                    <div class="text-point">
+                        <img src="/admin/data/blocks/public/text-image-1/check.png" alt="check">
+
+                        <h4 class="text-center">
+                            <span class="highlighted">{{ point.highlighted }}</span>
+                            <span>{{ point.text }}</span>
+                        </h4>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="img-wrapper long-image-fix">
+                <img src="{{ image }}" alt="">
+            </div>
+        </div>
+    </div>
+</section>

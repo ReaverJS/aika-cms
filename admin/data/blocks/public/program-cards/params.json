@@ -1,29 +1,60 @@
 {
 	"title": "Programs List",
 	"params": {
-		"h1": {
-			"title": "Title H1",
+		"title": {
+			"title": "Title",
 			"type": "string",
 			"required": true,
-			"default": "Title H1"
+			"default": "Программа"
 		},
-		"h2": {
-			"title": "Title H2",
-			"type": "string",
+		"program": {
+			"title": "Program",
+			"type": "collection",
 			"required": true,
-			"default": "Title H2"
-		},
-		"h3": {
-			"title": "Title H3",
-			"type": "string",
-			"required": true,
-			"default": "Title H3"
-		},
-		"h4": {
-			"title": "Title H4",
-			"type": "string",
-			"required": true,
-			"default": "Title H4"
+			"subParams": {
+				"time": {
+					"title": "Time",
+					"type": "string",
+					"required": true
+				},
+				"desc": {
+					"title": "Description",
+					"type": "string",
+					"required": false
+				},
+				"speaker": {
+					"title": "Speaker",
+					"type": "string",
+					"required": false
+				}
+			},
+			"default": [
+				{
+					"time": "9:30 - 10:00",
+					"desc": "Регистрация и сбор участников",
+					"speaker": ""
+				},
+				{
+					"time": "10:00 - 10:20",
+					"desc": "Аналитика и прогнозы рынка первичной недвижимости.\nРешения Homsters.kz",
+					"speaker": "Зульфия Гетманчук, CEO Homsters Central Asia"
+				},
+				{
+					"time": "10:20 - 10:50",
+					"desc": "Новые законопроекты и правила",
+					"speaker": "Виктор Микрюков, Ассоциация Застройщиков Казахстана"
+				},
+				{
+					"time": "10:50 - 11:30",
+					"desc": "Механизм получения гарантии КЖК",
+					"speaker": "Казахстанская жилищная компания"
+				},
+				{
+					"time": "11:30 - 12:00",
+					"desc": "Вопросы-Ответы",
+					"speaker": ""
+				}
+			]
 		}
 	}
 }

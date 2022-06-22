@@ -7,6 +7,18 @@
 			"required": false,
 			"default": "/admin/data/blocks/public/hero/hero.jpg"
 		},
+		"gradient": {
+			"title": "Gradient",
+			"type": "boolean",
+			"required": false,
+			"default": true
+		},
+		"textColor": {
+			"title": "Text color (hex, rgb, html)",
+			"type": "string",
+			"required": false,
+			"default": ""
+		},
 		"overtitle": {
 			"title": "Over-Title",
 			"type": "string",

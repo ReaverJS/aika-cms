@@ -1,50 +1,20 @@
 <section class="program">
     <div class="container">
-        <h2>Программа</h2>
+        <h2>{{ title }}</h2>
 
         <div class="program-wrapper">
-            <div class="program-card">
-                <div class="program-point"></div>
-                <div class="text-wrapper">
-                    <h5>9:30 - 10:00</h5>
-                    <p>Регистрация и сбор участников</p>
+            {% for point in program %}
+                <div class="program-card">
+                    <div class="program-point"></div>
+                    <div class="text-wrapper">
+                        <h5>{{ point.time }}</h5>
+                        <p>{{ point.desc }}</p>
+                        {% if point.speaker %}
+                            <p class="program-speaker">{{ point.speaker }}</p>
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-
-            <div class="program-card">
-                <div class="program-point"></div>
-                <div class="text-wrapper">
-                    <h5>10:00 - 10:20</h5>
-                    <p>Аналитика и прогнозы рынка первичной недвижимости.<br>Решения Homsters.kz</p>
-                    <p class="program-speaker">Зульфия Гетманчук, CEO Homsters Central Asia</p>
-                </div>
-            </div>
-
-            <div class="program-card">
-                <div class="program-point"></div>
-                <div class="text-wrapper">
-                    <h5>10:20 - 10:50</h5>
-                    <p>Новые законопроекты и правила</p>
-                    <p class="program-speaker">Виктор Микрюков, Ассоциация Застройщиков Казахстана</p>
-                </div>
-            </div>
-
-            <div class="program-card">
-                <div class="program-point"></div>
-                <div class="text-wrapper">
-                    <h5>10:50 - 11:30</h5>
-                    <p>Механизм получения гарантии КЖК</p>
-                    <p class="program-speaker">Казахстанская жилищная компания</p>
-                </div>
-            </div>
-
-            <div class="program-card">
-                <div class="program-point"></div>
-                <div class="text-wrapper">
-                    <h5>11:30 - 12:00</h5>
-                    <p>Вопросы-Ответы</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

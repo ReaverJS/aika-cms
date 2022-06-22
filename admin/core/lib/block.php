@@ -11,4 +11,12 @@ class Block {
         $this->code = $stdObject->code ? $stdObject->code : null;
         $this->params = $stdObject->params ? $stdObject->params : null;
     }
+
+    function isThisBlock($code) {
+        return ($this->code === $code);
+    }
+
+    function update($params) {
+        $this->params = $params;
+    }
 }

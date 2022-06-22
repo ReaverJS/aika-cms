@@ -1,34 +1,24 @@
 <section class="speakers">
     <div class="container">
-        <h2>Спикеры</h2>
-        <div class="speakers-wrapper">
-            <div class="speaker">
-                <div class="img-wrapper">
-                    <img src="/admin/data/blocks/public/speakers-cards/speaker-2.jpg" alt="Зульфия Гетманчук">
+        <h2>{{ title }}</h2>
+        <div class="speakers-wrapper {% if isFourCols %}cols-4{% endif %}">
+            {% for speaker in speakers %}
+                <div class="speaker">
+                    {% if speaker.img == 'placeholder' %}
+                        <div class="img-wrapper placeholder">
+                            <img src="/admin/data/blocks/public/speakers-cards/user.png" alt="Обсуждается">
+                        </div>
+                    {% else %}
+                        <div class="img-wrapper">
+                            <img src="{{ speaker.img }}" alt="{{ speaker.name }}">
+                        </div>
+                    {% endif %}
+                    <div class="text-wrapper">
+                        <h5>{{ speaker.name }}</h5>
+                        <p>{{ speaker.position }}</p>
+                    </div>
                 </div>
-                <div class="text-wrapper">
-                    <h5>Зульфия Гетманчук</h5>
-                    <p>CEO, Homsters Central Asia</p>
-                </div>
-            </div>
-            <div class="speaker">
-                <div class="img-wrapper">
-                    <img src="/admin/data/blocks/public/speakers-cards/speaker-1.jpg" alt="Виктор Микрюков">
-                </div>
-                <div class="text-wrapper">
-                    <h5>Виктор Микрюков</h5>
-                    <p>Президент, Ассоциация застройщиков Казахстана</p>
-                </div>
-            </div>
-            <div class="speaker">
-                <div class="img-wrapper placeholder">
-                    <img src="/admin/data/blocks/public/speakers-cards/user.png" alt="Обсуждается">
-                </div>
-                <div class="text-wrapper">
-                    <h5>Обсуждается</h5>
-                    <p>Казахстанская жилищная компания</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

@@ -1,8 +1,10 @@
 .hero {
     height: 100vh;
+    min-height: 600px;
     position: relative;
     overflow: hidden;
     padding: 0;
+    margin-top: 68px;
 }
 
 .hero .img-wrapper {
@@ -16,7 +18,7 @@
     object-fit: cover;
 }
 
-.hero .img-wrapper::after {
+.hero .img-wrapper.gradient::after {
     content: '';
     position: absolute;
     display: block;
@@ -77,7 +79,6 @@
 .hero .event-card {
 
 }
-
 
 @media (max-width: 767.98px) {
     .hero .container {

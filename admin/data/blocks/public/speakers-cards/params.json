@@ -1,29 +1,56 @@
 {
 	"title": "Speakers List",
 	"params": {
-		"h1": {
-			"title": "Title H1",
+		"title": {
+			"title": "Title",
 			"type": "string",
 			"required": true,
-			"default": "Title H1"
+			"default": "Спикеры"
 		},
-		"h2": {
-			"title": "Title H2",
-			"type": "string",
+		"isFourCols": {
+			"title": "Four columns",
+			"type": "boolean",
 			"required": true,
-			"default": "Title H2"
+			"default": false
 		},
-		"h3": {
-			"title": "Title H3",
-			"type": "string",
+		"speakers": {
+			"title": "Speakers",
+			"type": "collection",
 			"required": true,
-			"default": "Title H3"
-		},
-		"h4": {
-			"title": "Title H4",
-			"type": "string",
-			"required": true,
-			"default": "Title H4"
+			"subParams": {
+				"img": {
+					"title": "Image",
+					"type": "string",
+					"required": true
+				},
+				"name": {
+					"title": "Name",
+					"type": "string",
+					"required": false
+				},
+				"position": {
+					"title": "Position",
+					"type": "string",
+					"required": false
+				}
+			},
+			"default": [
+				{
+					"img": "/admin/data/blocks/public/speakers-cards/speaker-2.jpg",
+					"name": "Зульфия Гетманчук",
+					"position": "CEO, Homsters Central Asia"
+				},
+				{
+					"img": "/admin/data/blocks/public/speakers-cards/speaker-1.jpg",
+					"name": "Виктор Микрюков",
+					"position": "Президент, Ассоциация застройщиков Казахстана"
+				},
+				{
+					"img": "placeholder",
+					"name": "Обсуждается",
+					"position": "Казахстанская жилищная компания"
+				}
+			]
 		}
 	}
 }

@@ -3,14 +3,21 @@
     background-color: var(--primary-color);
 }
 
+.registration h2 {
+    color: var(--pseudo-white);
+}
+
 .registration form {
-    max-width: 400px;
+    max-width: 840px;
     margin: auto;
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .registration form .form-group {
+    width: calc(50% - 20px);
     margin-bottom: 16px;
     display: flex;
     flex-flow: column;
@@ -43,10 +50,108 @@
 }
 
 .registration form input[type="submit"] {
+    display: block;
+    margin: auto;
     margin-top: 30px;
-    background-color: var(--pseudo-black);
-    color: white;
+    background-color: white;
+    color: var(--pseudo-black);
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+}
+
+.registration form input[type="submit"].disabled {
+    pointer-events: none;
+    opacity: .7;
+}
+
+.form-btn-wrapper {
+    width: 100%;
+}
+
+
+#map-place {
+    cursor: pointer;
+}
+
+.registration-modal-layout {
+    display: none;
+    position: fixed;
+    inset: 0 0 0 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.3);
+    z-index: 100;
+}
+
+.registration-modal-layout.active {
+    display: flex;
+}
+
+.registration-modal {
+    max-width: 1200px;
+    width: 100%;
+    margin: 12px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: white;
+    position: relative;
+
+    max-height: 92vh;
+    overflow-y: scroll;
+}
+
+.registration-modal .close-btn {
+    color: var(--pseudo-black);
+    font-size: 36px;
+    line-height: 36px;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    text-align: center;
+    text-decoration: none;
+    opacity: .6;
+    transition: opacity .6s;
+}
+.registration-modal .close-btn:hover {
+    opacity: 1;
+}
+
+.registration-modal svg {
+}
+
+.registration-modal svg text {
+    pointer-events: none;
+}
+
+.registration-modal svg .map-place {
+    cursor: pointer;
+    transition: fill .3s;
+}
+
+.registration-modal svg .map-place:hover {
+    fill: #239eed;
+    filter: drop-shadow(2px 2px 6px rgb(0 0 0 / 40%));
+}
+
+.registration-modal svg .map-place.busy {
+    opacity: .6;
+    pointer-events: none;
+}
+
+@media (max-width: 767.98px) {
+    .registration form {
+        max-width: 400px;
+        margin: auto;
+        display: flex;
+        flex-flow: column;
+    }
+
+    .registration form .form-group {
+        width: 100%;
+    }
 }

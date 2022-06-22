@@ -1,29 +1,67 @@
 {
 	"title": "Registration Form",
 	"params": {
-		"h1": {
-			"title": "Title H1",
+		"title": {
+			"title": "Title",
 			"type": "string",
 			"required": true,
-			"default": "Title H1"
+			"default": "Регистрация"
 		},
-		"h2": {
-			"title": "Title H2",
-			"type": "string",
+		"nameEnabled": {
+			"title": "Name",
+			"type": "boolean",
 			"required": true,
-			"default": "Title H2"
+			"default": true
 		},
-		"h3": {
-			"title": "Title H3",
-			"type": "string",
+		"emailEnabled": {
+			"title": "Email",
+			"type": "boolean",
 			"required": true,
-			"default": "Title H3"
+			"default": true
 		},
-		"h4": {
-			"title": "Title H4",
-			"type": "string",
+		"phoneEnabled": {
+			"title": "Phone",
+			"type": "boolean",
 			"required": true,
-			"default": "Title H4"
+			"default": true
+		},
+		"companyEnabled": {
+			"title": "Company",
+			"type": "boolean",
+			"required": true,
+			"default": true
+		},
+		"placeEnabled": {
+			"title": "Place",
+			"type": "boolean",
+			"required": true,
+			"default": true
+		},
+		"cityEnabled": {
+			"title": "City",
+			"type": "boolean",
+			"required": true,
+			"default": true
+		},
+		"cities": {
+			"title": "Cities",
+			"type": "collection",
+			"required": true,
+			"subParams": {
+				"name": {
+					"title": "Name",
+					"type": "string",
+					"required": true
+				}
+			},
+			"default": [
+				{
+					"name": "Алматы"
+				},
+				{
+					"name": "Нур-султан"
+				}
+			]
 		}
 	}
 }

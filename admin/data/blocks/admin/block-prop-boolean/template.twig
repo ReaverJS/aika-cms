@@ -1,7 +1,7 @@
-<div class="form-check mb-3">
-    <input class="form-check-input" type="checkbox" id="{{ blockCode }}-{{ paramCode }}"
-           value="{{ paramCode }}" {% if value %} checked {% endif %} {% if disabled %} disabled {% endif %}>
-    <label class="form-check-label" for="{{ blockCode }}-{{ paramCode }}">
+<div class="form-check mb-3"  data-param {% if inCollection %} data-in-collection {% endif %}>
+    <input class="form-check-input" type="checkbox" id="{{ blockCode }}-{{ paramCode }}" name="{{ paramCode }}"
+           value="{{ value }}" {% if value %} checked {% endif %} {% if disabled %} disabled {% endif %}>
+    <label class="form-check-label">
         {{ title }}
     </label>
 </div>

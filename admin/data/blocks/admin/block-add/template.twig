@@ -1,0 +1,18 @@
+<div>
+    <h2 class="display-4 mb-4 text-center text-warning">Add Block <i class="bi bi-grid"></i></h2>
+
+    <div class="v-stack overflow-auto">
+        {% for block in blocks %}
+            <div class="card mb-2 p-2 text-bg-light"
+                 style="cursor: pointer" onclick="window.location.href='?code={{ block.code }}&page={{ page }}'">
+                <h5 class="card-title mb-0 lead"><i class="bi bi-slash-square me-2"></i> {{ block.title }}</h5>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% if page and code %}
+    <script>
+        window.parent.location.reload()
+    </script>
+{% endif %}

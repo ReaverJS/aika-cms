@@ -1,6 +1,6 @@
-<div class="form-floating mb-3">
+<div class="form-floating mb-3" data-param {% if inCollection %} data-in-collection {% endif %}>
     <input type="text" class="form-control" id="{{ blockCode }}-{{ paramCode }}"
-           placeholder="{{ title }}"
+           placeholder="{{ title }}"  name="{{ paramCode }}"
             {% if disabled %} disabled {% endif %}
            {% if value %} value="{{ value }}" {% endif %}>
     <label for="{{ blockCode }}-{{ paramCode }}">{{ title }}</label>

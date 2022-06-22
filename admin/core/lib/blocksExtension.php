@@ -46,9 +46,10 @@ class BlocksExtension extends AbstractExtension
         $scripts = $App->properties->scripts;
         $template = '/blocks/admin/script/template.twig';
 
+        $time = time();
         $html = '';
         foreach ($scripts as $script) {
-            $html .= $env->render($template, ['src' => $script]);
+            $html .= $env->render($template, ['src' => $script . '?v=' . $time]);
         }
         return $html;
     }
@@ -61,9 +62,10 @@ class BlocksExtension extends AbstractExtension
         $styles = $App->properties->styles;
         $template = '/blocks/admin/style/template.twig';
 
+        $time = time();
         $html = '';
         foreach ($styles as $style) {
-            $html .= $env->render($template, ['href' => $style]);
+            $html .= $env->render($template, ['href' => $style . '?v=' . $time]);
         }
         return $html;
     }

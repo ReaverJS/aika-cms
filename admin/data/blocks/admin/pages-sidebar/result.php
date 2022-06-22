@@ -5,8 +5,8 @@ $sections = [];
 $pages = [];
 foreach ($App->site->pages as $page) {
     $arUrl = array_filter(explode('/', $page->url));
-    sort($arUrl);
-    $section = count($arUrl) ? '/' . $arUrl[0] : '/';
+
+    $section = count($arUrl) ? '/' . $arUrl[1] : '/';
 
     $sections[$section]['url'] = $section;
     $sections[$section]['pages'][] = $page;

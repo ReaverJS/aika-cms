@@ -1,37 +1,63 @@
 <section class="registration">
     <div class="container">
-        <h2>Регистрация</h2>
+        <h2>{{ title }}</h2>
 
         <form action="">
-            <div class="form-group">
-                <label for="name">Имя</label>
-                <input id="name" type="text" name="name">
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input id="email" type="text" name="email">
-            </div>
-            <div class="form-group">
-                <label for="phone">Телефон</label>
-                <input id="phone" type="text" name="phone">
-            </div>
-            <div class="form-group">
-                <label for="company">Компания</label>
-                <input id="company" type="text" name="company">
-            </div>
-            <div class="form-group">
-                <label for="city">Город</label>
-                <select id="city" name="city">
-                    <option>Алматы</option>
-                    <option>Нур-Султан</option>
-                    <option>Шымкент</option>
-                    <option>Актобе</option>
-                    <option>Атырау</option>
-                    <option>Караганда</option>
-                </select>
-            </div>
+            {% if nameEnabled %}
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input id="name" type="text" name="name">
+                </div>
+            {% endif %}
+            {% if emailEnabled %}
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" type="text" name="email">
+                </div>
+            {% endif %}
+            {% if phoneEnabled %}
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input id="phone" type="text" name="phone">
+                </div>
+            {% endif %}
+            {% if companyEnabled %}
+                <div class="form-group">
+                    <label for="company">Компания</label>
+                    <input id="company" type="text" name="company">
+                </div>
+            {% endif %}
+            {% if placeEnabled %}
+                <div class="form-group">
+                    <label for="map-place">Место</label>
+                    <input id="map-place" type="text" name="map-place" placeholder="Выбрать место">
+                </div>
+            {% endif %}
 
-            <input type="submit" value="Отправить 🚀">
+            {% if cityEnabled %}
+                <div class="form-group">
+                    <label for="city">Город</label>
+                    <select id="city" name="city">
+                        {% for city in cities %}
+                            <option>{{ city.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            {% endif %}
+
+            <div class="form-btn-wrapper">
+                <input type="submit" value="Отправить 🚀">
+            </div>
         </form>
     </div>
 </section>
+
+<div class="registration-modal-layout">
+    <div class="registration-modal">
+        <h2>Выберите место</h2>
+        <a class="close-btn" href="#">✖</a>
+        <div class="svg-wrapper">
+
+        </div>
+    </div>
+</div>

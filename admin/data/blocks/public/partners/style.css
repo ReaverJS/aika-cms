@@ -9,8 +9,11 @@
 }
 
 .partners-wrapper .partner {
-    width: 250px;
+    width: 100%;
     height: 200px;
+    max-width: 250px;
+    margin-left: 12px;
+    margin-right: 12px;
     border-radius: 20px;
     overflow: hidden;
     background-color: white;

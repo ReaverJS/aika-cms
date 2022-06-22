@@ -7,12 +7,132 @@
             'paramCode': paramName,
             'blockCode': code,
             'value': param.default,
-            'disabled': true,
             'subParams': param.subParams,
         }) }}
     {% endfor %}
+
+    <form action="/admin/block-preview/?code={{ code }}{% if page %}&page={{ page }}{% endif %}" method="post" target="block-preview-iframe" name="post-form" style="display:none;">
+        <input type="text" name="data">
+    </form>
+    <div class="d-flex justify-content-end">
+        <a href="#" class="btn btn-primary" data-action="save">
+            Save <i class="bi bi-save ms-1"></i>
+        </a>
+    </div>
     <h5 class="display-6">Preview</h5>
     <div class="card overflow-hidden">
-        <iframe src="/admin/block-preview/?code={{ code }}" frameborder="0" height="600px"></iframe>
+        <iframe src="/admin/block-preview/?code={{ code }}{% if page %}&page={{ page }}{% endif %}" id="block-preview-iframe" name="block-preview-iframe" frameborder="0" height="600px"></iframe>
     </div>
 {% endif %}
+
+<script>
+    document.querySelectorAll('input').forEach(el => {
+        el.addEventListener('change', event => {
+            document.querySelector('[name="data"]').value = JSON.stringify({
+                params: getParams()
+            })
+
+            document.querySelector('[name="post-form"]').submit()
+        })
+    })
+
+    document.querySelectorAll('[data-collection-item]').forEach(el => {
+        el.querySelectorAll('.btn-close').forEach(btn => {
+            btn.addEventListener('click', event => {
+                el.remove()
+
+                document.querySelector('[name="data"]').value = JSON.stringify({
+                    params: getParams()
+                })
+
+                document.querySelector('[name="post-form"]').submit()
+            })
+        })
+    })
+
+    document.querySelectorAll('[data-action="add-item"]').forEach(btn => {
+        console.log(btn)
+        btn.addEventListener('click', event => {
+            let el = btn.parentElement.parentElement.parentElement
+            let oldItem = el.querySelector('[data-collection-item]')
+            let newItem = oldItem.outerHTML
+            console.log(newItem)
+            oldItem.parentElement.innerHTML += newItem
+
+            document.querySelector('[name="data"]').value = JSON.stringify({
+                params: getParams()
+            })
+
+            document.querySelector('[name="post-form"]').submit()
+
+            el.querySelectorAll('[data-collection-item]:last-of-type input').forEach(el => {
+                el.addEventListener('change', event => {
+                    document.querySelector('[name="data"]').value = JSON.stringify({
+                        params: getParams()
+                    })
+
+                    document.querySelector('[name="post-form"]').submit()
+                })
+            })
+        })
+    })
+
+    document.querySelectorAll('[data-action="save"]').forEach(el => {
+        el.addEventListener('click', event => {
+            document.querySelector('[name="data"]').value = JSON.stringify({
+                params: getParams(),
+                action: 'save'
+            })
+
+            document.querySelector('[name="post-form"]').submit()
+
+
+            setTimeout(() => {
+                window.parent.location.reload()
+            }, 200)
+        })
+    })
+
+    function getParams() {
+        let params = {}
+        document.querySelectorAll('[data-param]:not([data-in-collection])').forEach(el => {
+            let collectionItems = el.querySelectorAll('[data-collection-item]')
+            if (collectionItems.length) {
+                let code = el.dataset.name
+                let collection = []
+
+                collectionItems.forEach(collectionItem => {
+                    let collectionValue = {}
+                    let subProps = collectionItem.querySelectorAll('[data-in-collection]')
+                    subProps.forEach(subProp => {
+                        let subInput = subProp.querySelector('input')
+                        let subCode = subInput.name
+                        let subValue = subInput.value
+
+                        if (subInput.type === 'checkbox') {
+                            subValue = subInput.checked
+                        }
+
+                        collectionValue[subCode] = subValue
+                    })
+                    collection.push(collectionValue)
+                })
+                params[code] = collection
+
+            } else {
+                let input = el.querySelector('input')
+                let code = input.name
+                let value = input.value
+
+                if (input.type === 'checkbox') {
+                    value = input.checked
+                }
+                params[code] = value
+            }
+
+        })
+        console.log(params)
+        return params;
+    }
+
+</script>

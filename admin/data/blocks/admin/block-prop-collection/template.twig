@@ -1,18 +1,18 @@
-<div class="card collection mb-3" id="{{ blockCode }}-{{ paramCode }}">
+<div class="card collection mb-3" id="{{ blockCode }}-{{ paramCode }}"  data-param data-name="{{ paramCode }}">
     <div class="card-body">
         <div class="d-flex justify-content-between mb-2">
             <h5 class="card-title lead">{{ title }}</h5>
             <div>
-                <button type="button" class="btn btn-primary" {% if disabled %} disabled {% endif %}>
-                    <i class="bi bi-plus-circle"></i>
+                <button type="button" class="btn btn-primary" {% if disabled %} disabled {% endif %} data-action="add-item">
                     Add
+                    <i class="bi bi-plus-circle"></i>
                 </button>
             </div>
         </div>
         <div class="row">
             {% if value %}
                 {% for item in value %}
-                    <div class="col-4 mb-3">
+                    <div class="col-4 mb-3" data-collection-item>
                         <div class="card bg-light">
                             <div class="d-flex justify-content-end">
                                 <button type="button" class="btn-close me-1 mt-1" {% if disabled %} disabled {% endif %}></button>
@@ -25,6 +25,7 @@
                                         'blockCode': code,
                                         'value': paramValue,
                                         'disabled': disabled,
+                                        'inCollection': true
                                     }) }}
                                 {% endfor %}
                             </div>

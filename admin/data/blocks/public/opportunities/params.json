@@ -1,0 +1,42 @@
+{
+	"title": "Opportunities",
+	"params": {
+		"title": {
+			"title": "Title",
+			"type": "string",
+			"required": true,
+			"default": "Заголовок"
+		},
+		"opportunities": {
+			"title": "Opportunities",
+			"type": "collection",
+			"subParams": {
+				"title": {
+					"title": "Title",
+					"type": "string",
+					"required": true
+				},
+				"subtitle": {
+					"title": "Subtitle",
+					"type": "string",
+					"required": true
+				}
+			},
+			"required": false,
+			"default": [
+				{
+					"title": "Тест",
+					"subtitle": "lorem10"
+				},
+				{
+					"title": "Тест",
+					"subtitle": "lorem10"
+				},
+				{
+					"title": "Тест",
+					"subtitle": "lorem10"
+				}
+			]
+		}
+	}
+}

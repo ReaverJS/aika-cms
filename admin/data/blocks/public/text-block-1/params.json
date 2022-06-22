@@ -1,0 +1,17 @@
+{
+  "title": "Text Block 1",
+  "params": {
+    "title": {
+      "title": "Title",
+      "type": "string",
+      "required": true,
+      "default": ""
+    },
+    "text": {
+      "title": "text",
+      "type": "string",
+      "required": true,
+      "default": "lorem5"
+    }
+  }
+}

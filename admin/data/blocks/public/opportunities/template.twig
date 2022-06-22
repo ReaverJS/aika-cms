@@ -1,0 +1,15 @@
+<section class="cities">
+    <div class="container">
+        <h2>{{ title }}</h2>
+        <div class="cities-wrapper">
+            {% for opportunity in opportunities %}
+                <div class="city">
+                    <div class="text-wrapper">
+                        <h5>{{ opportunity.title }}</h5>
+                        <p>{{ opportunity.subtitle }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
